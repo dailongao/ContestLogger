@@ -29,6 +29,11 @@ if($result=$db->query(sprintf('select * from position where id=%d',$teamcode))->
 	wrong_msg("已经登记过！");
 }
 
+// 位置重复检查
+if($result=$db->query(sprintf('select * from position where pos=%d',$teampos))->fetchArray()){
+	wrong_msg("机位已经被占，请重抽或释放该位置！");
+}
+
 // Check position
 // 这部分应当是一个检查是否相邻的表格
 
