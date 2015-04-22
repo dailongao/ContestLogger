@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once "util.php";
 ?>
 <!DOCTYPE html>
 <?php
@@ -63,16 +64,16 @@ if(isset($_POST['teamcode']) && isset($_SESSION['login'])){
         <div class="form-group">
           <label for="text">Team Code</label>
           <input type="text" name="teamcode" <?php if(isset($_POST['teamcode'])) echo "value=\"" . $_POST['teamcode'] . "\"" ; ?> <?php if(!isset($team_result) || (isset($team_result) && !$team_result)) { ?>autofocus="autofocus"<?php } ?>></input>
+        <button id="btn" type="submit" class="btn">查找</button></center>
+
         </div>
-        <button id="btn" type="submit" class="btn">Submit</button></center>
       </form>
 
       <?php if(isset($team_result) && $team_result){ ?>
         <div class="container">
           <?php 
-          echo "请确认信息";
-          var_dump($team_result);
-          ?>
+			showteam($team_result);
+		  ?>
         </div>
         <form action="gao.php" method="POST">
         <div class="form-group">
