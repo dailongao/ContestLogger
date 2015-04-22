@@ -21,15 +21,19 @@ $teampos = (int)$_POST['teampos'];
 $db = new SQLite3('zjp2015.db') or wrong_msg("数据库炸了，找人来修");
 
 // Check existence
+if($result=$db->query(sprintf('select * from teams where id=%d',$teamcode))->fetchArray()){
+	wrong_msg("队伍编号不合法！");
+}
+
 if($result=$db->query(sprintf('select * from position where id=%d',$teamcode))->fetchArray()){
 	wrong_msg("已经登记过！");
 }
 
 // Check position
+// 这部分应当是一个检查是否相邻的表格
 
 // insert into db
-
-if(!$result=$db->exec(sprintf('Insert into position values(%d, %d)',$teamcode, $teampos))){
+if(!$result=$db->exec(sprintf('insert into position values(%d, %d)',$teamcode, $teampos))){
 	wrong_msg($db->lastErrorMsg());  
 } else {
 	wrong_msg("成功");
