@@ -65,8 +65,8 @@ if(isset($_POST['teamcode']) && isset($_SESSION['login'])){
       <form action="index.php" method="POST">
         <div class="form-group">
           <label for="text">Team Code</label>
-          <input type="text" name="teamcode" <?php if(isset($_POST['teamcode'])) echo "value=\"" . $_POST['teamcode'] . "\"" ; ?> <?php if(!isset($team_result) || (isset($team_result) && !$team_result)) { ?>autofocus="autofocus"<?php } ?>></input>
-        <button id="btn" type="submit" class="btn">查找</button>
+          <input type="text" name="teamcode" size="5" <?php if(isset($_POST['teamcode'])) echo "value=\"" . $_POST['teamcode'] . "\"" ; ?> <?php if(!isset($team_result) || (isset($team_result) && !$team_result)) { ?>autofocus="autofocus"<?php } ?>></input>
+        <button id="btn" type="submit" class="btn btn-lg">查找</button>
 
         </div>
       </form>
@@ -76,13 +76,14 @@ if(isset($_POST['teamcode']) && isset($_SESSION['login'])){
           <?php 
 			showteam($team_result);
 		  ?>
-        </div>
+		</div>
+	<br> <hr> <br>
         <form action="gao.php" method="POST">
         <div class="form-group">
           <label for="text">Position</label>
-          <input type="text" name="teampos" autofocus="autofocus"></input>
+          <input type="text" name="teampos" autofocus="autofocus" size=5></input>
           <input type="hidden" name="teamcode" value=<?=$_POST['teamcode']?>>
-          <button id="btn" type="submit" class="btn">Submit</button>
+          <button id="btn" type="submit" class="btn btn-lg">关联信封</button>
         </div>
       </form>
       <?php } ?>

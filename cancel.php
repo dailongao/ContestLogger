@@ -67,10 +67,10 @@ if(isset($_POST['teampos']) && isset($_SESSION['login'])){
 
 	<h4><a href="index.php">返回登记页面</a></h4>
 <!-- 未加美化 -->
-	<p>请务必完整的收回信封后再取消队伍与信封的关联</p>
+	<p class="note">请务必完整的收回信封后再取消队伍与信封的关联</p>
 
           <label for="text">信封编号</label>
-          <input type="text" name="teampos" <?php if(isset($_POST['teampos'])) echo "value=\"" . $_POST['teampos'] . "\"" ; ?> <?php if(!isset($team_result) || (isset($team_result) && !$team_result)) { ?>autofocus="autofocus"<?php } ?>></input>
+          <input type="text" name="teampos" size="5" <?php if(isset($_POST['teampos'])) echo "value=\"" . $_POST['teampos'] . "\"" ; ?> <?php if(!isset($team_result) || (isset($team_result) && !$team_result)) { ?>autofocus="autofocus"<?php } ?>></input>
         <button id="btn" type="submit" class="btn">查找</button></center>
 
         </div>
