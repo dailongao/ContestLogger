@@ -92,7 +92,7 @@ if(isset($_POST['teamcode']) && isset($_SESSION['login'])){
           <h2 class="sub-header">Please login first</h2>
         </center>
       <?php } ?>
-    </div>
+	</div>
   </body>
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>

@@ -15,7 +15,6 @@ if(!isset($_POST['teampos'])){
 	wrong_msg("参数不全");
 }
 
-$teamcode = (int)$_POST['teamcode'];
 $teampos = (int)$_POST['teampos'];
 
 $db = new SQLite3('zjp2015.db') or wrong_msg("数据库炸了，找人来修");
