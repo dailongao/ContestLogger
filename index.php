@@ -90,7 +90,7 @@ if(isset($_POST['teamcode']) && isset($_SESSION['login'])){
 
       <?php } else { ?>
         <center>
-          <img src="img/logo.png">
+          <img src="img/logo.jpg" style="height:300px; width:300px;">
           <h2 class="sub-header">Please login first</h2>
         </center>
       <?php } ?>
