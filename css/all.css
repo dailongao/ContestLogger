@@ -43,15 +43,20 @@ html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	background-color: #C4C4C4; 
 	border-color: #9896A3; 
 }
-table {
-	border: 2px;
-}
 
 
-#teaminfo tr, #teaminfo th {
+#teaminfo td {
 	font-size: 30px;
 	text-align: center;
-	color: ;
+	color: red;
+	font-weight: bold;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#teaminfo th{
+	font-size: 24px;
+	text-align: center;
 }
 
 input {
