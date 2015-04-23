@@ -72,7 +72,7 @@ if(isset($_POST['teamcode']) && isset($_SESSION['login'])){
       </form>
 
       <?php if(isset($team_result) && $team_result){ ?>
-        <div class="container">
+        <div class="container-fluid" style="padding-top:30px">
           <?php 
 			showteam($team_result);
 		  ?>
