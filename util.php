@@ -7,4 +7,5 @@ function showteam($arr){
 	}
 	echo '</table>';
 }
+
 ?>
