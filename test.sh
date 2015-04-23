@@ -11,6 +11,7 @@ insert into teams values
 (5002,"team2","school2","b1","b2","b3",NULL),
 (5003,"team3","school3","c1","c2","c3",NULL),
 (5004,"team4","school3","d1","d2","d3",NULL),
+(5006,"中文6","中文","f","ex","e3",NULL),
 (5005,"中文5","中文","e1","e2","e3",NULL);
 EOF
 
