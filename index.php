@@ -34,6 +34,7 @@ if(isset($_POST['teamcode']) && isset($_SESSION['login'])){
         <div class="navbar-header">
           <a class="navbar-brand" href="index.php">2015 省赛登记</a>
           <a class="navbar-brand" href="cancel.php">撤销</a>
+          <a class="navbar-brand" href="registered.php">注册完成列表</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <?php if(!isset($_SESSION["login"])) {?>
