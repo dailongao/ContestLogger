@@ -1,29 +1,74 @@
 @font-face {
-  font-family: 'Ubuntu';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Ubuntu Light'), local('Ubuntu-Light'), url("fonts/ubuntul.woff") format('woff');
+	font-family: 'Ubuntu';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Ubuntu Light'), local('Ubuntu-Light'), url("fonts/ubuntul.woff") format('woff');
 }
 
 html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Ubuntu", "Monaco", "WenQuanYi Micro Hei", "Microsoft YaHei" !important;
+	font-family: "Ubuntu", "Monaco", "WenQuanYi Micro Hei", "Microsoft YaHei" !important;
 }
 
 .flash-container {
-  display: none;
-  background: none repeat scroll 0% 0% #222;
-  text-align: center;
-  cursor: pointer;
-  color: #FFF;
-  font-size: 16px;
-  bottom: 0px;
-  z-index: 100;
-  width: 100%;
-  border-radius: 4px;
-  margin-bottom: 20px;
+	display: none;
+	background: none repeat scroll 0% 0% #222;
+	text-align: center;
+	cursor: pointer;
+	color: #FFF;
+	font-size: 16px;
+	bottom: 0px;
+	z-index: 100;
+	width: 100%;
+	border-radius: 4px;
+	margin-bottom: 20px;
 }
 
 .flash-container .flash-alert {
-  text-shadow: 0px 1px 1px #CCC;
-  padding: 13.5px;
+	text-shadow: 0px 1px 1px #CCC;
+	padding: 13.5px;
+}
+
+.btn-lg { 
+	color: #ffffff; 
+	background-color: #9E9CA1; 
+	border-color: #9896A3; 
+} 
+
+.btn-lg:hover, 
+.btn-lg:focus, 
+.btn-lg:active, 
+.btn-lg.active, 
+.open .dropdown-toggle.btn-lg { 
+	color: #ffffff; 
+	background-color: #C4C4C4; 
+	border-color: #9896A3; 
+}
+
+
+#teaminfo td {
+	font-size: 30px;
+	text-align: center;
+	color: red;
+	font-weight: bold;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#teaminfo th{
+	font-size: 24px;
+	text-align: center;
+}
+
+input {
+	font-size: 36px;
+	font: bold;
+}
+
+label {
+	font-size: 36px;
+}
+
+.note {
+	font-size: 24px;
+	color: red;
 }
