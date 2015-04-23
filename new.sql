@@ -1,3 +1,5 @@
+DROP TABLE IF exists teams;
+
 CREATE TABLE teams(
 	id integer PRIMARY KEY NOT NULL UNIQUE,
 	name TEXT 			NOT NULL,
