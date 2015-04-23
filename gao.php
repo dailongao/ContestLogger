@@ -25,7 +25,7 @@ if(! $result=$db->query(sprintf('select * from teams where id=%d',$teamcode))->f
 	wrong_msg("队伍编号不合法！");
 }
 
-if($result=$db->query(sprintf('select * from teams where pid=%d',$teamcode))->fetchArray()){
+if($result=$db->query(sprintf('select * from teams where pid=%d',$teampos))->fetchArray()){
 	wrong_msg("已经登记，请检查是否为该队");
 }
 
