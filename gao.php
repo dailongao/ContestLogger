@@ -27,6 +27,8 @@ $db = new SQLite3('zjp2015.db') or wrong_msg("数据库炸了，找人来修");
 if(! $result=$db->query(sprintf('select * from teams where id=%d',$teamcode))->fetchArray()){
 	wrong_msg("队伍编号不合法！");
 }
+$school= $result['school'];
+
 if( $result["pid"]){
 	wrong_msg("该队伍已经持有信封" . $result['pid']. ", 请确认或收回该信封." );
 }
@@ -38,7 +40,14 @@ if($result=$db->query(sprintf('select * from teams where pid=%d',$teampos))->fet
 
 // Check position
 // 这部分应当是一个检查是否相邻的表格
-
+$res=$db->query(sprintf('select pid from teams where school="%s" and pid is not null',$school));
+while($x = $res->fetchArray()) {
+	$d=abs($x[0]-$teampos);
+	if($d==1 || (7<$d && $d<12)) {
+		wrong_msg( "请收回信封重抽，与本校队伍过近！");
+		die(-1);
+	}
+}
 
 // insert into db
 if(!$result=$db->exec(sprintf('update teams set pid=%d where id=%d',$teampos, $teamcode))){
