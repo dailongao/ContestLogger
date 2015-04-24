@@ -2,10 +2,22 @@
 session_start();
 
 function wrong_msg($msg){
+	global $teamcode;
 	echo "<script>";  
-    echo "location.href=\"index.php?msg=" . $msg ."\"";  
+	$url = "\"index.php?msg=" . $msg;
+	if(isset($teamcode) && $msg != "成功")
+		$url = $url . "&teamcode=" . $teamcode;
+	$url = $url . "\"";
+    echo "location.href=$url";
     echo "</script>"; 
     //echo $msg; 
+    die();
+}
+
+$teamcode = (int)$_POST['teamcode'];
+$teampos = (int)$_POST['teampos'];
+if($teampos <=0 || $teampos >320 ) {
+	wrong_msg("编号错误");
 }
 
 if(!isset($_SESSION['login'])){
@@ -13,12 +25,6 @@ if(!isset($_SESSION['login'])){
 }
 if(!isset($_POST['teamcode']) || !isset($_POST['teampos'])){
 	wrong_msg("参数不全");
-}
-
-$teamcode = (int)$_POST['teamcode'];
-$teampos = (int)$_POST['teampos'];
-if($teampos <=0 || $teampos >320 ) {
-	wrong_msg("编号错误");
 }
 
 $db = new SQLite3('zjp2015.db') or wrong_msg("数据库炸了，找人来修");

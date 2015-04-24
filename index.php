@@ -13,8 +13,8 @@ if(isset($_POST['username'])){
 }
 ?>
 <?php
-if(isset($_POST['teamcode']) && isset($_SESSION['login'])){
-  $teamcode = (int)$_POST['teamcode'];
+if(isset($_GET['teamcode']) && isset($_SESSION['login'])){
+  $teamcode = (int)$_GET['teamcode'];
   $db = new SQLite3('zjp2015.db') or die("数据库炸了，找人来修");
   if(!$team_result=$db->query(sprintf('SELECT * from teams WHERE id=%d',$teamcode))->fetchArray())
     $msg = "找不到该队伍编号，请重试";
@@ -62,10 +62,10 @@ if(isset($_POST['teamcode']) && isset($_SESSION['login'])){
         </div>
       </div>
       <?php if(isset($_SESSION["login"])) {  ?>
-      <form action="index.php" method="POST">
+      <form action="index.php" method="GET">
         <div class="form-group">
           <label for="text">Team Code</label>
-          <input type="text" name="teamcode" size="5" <?php if(isset($_POST['teamcode'])) echo "value=\"" . $_POST['teamcode'] . "\"" ; ?> <?php if(!isset($team_result) || (isset($team_result) && !$team_result)) { ?>autofocus="autofocus"<?php } ?>></input>
+          <input type="text" name="teamcode" size="5" <?php if(isset($_GET['teamcode'])) echo "value=\"" . $_GET['teamcode'] . "\"" ; ?> <?php if(!isset($team_result) || (isset($team_result) && !$team_result)) { ?>autofocus="autofocus"<?php } ?>></input>
         <button id="btn" type="submit" class="btn btn-lg">查找</button>
 
         </div>
@@ -82,7 +82,7 @@ if(isset($_POST['teamcode']) && isset($_SESSION['login'])){
         <div class="form-group">
           <label for="text">Position</label>
           <input type="text" name="teampos" autofocus="autofocus" size=5></input>
-          <input type="hidden" name="teamcode" value=<?=$_POST['teamcode']?>>
+          <input type="hidden" name="teamcode" value=<?=$_GET['teamcode']?>>
           <button id="btn" type="submit" class="btn btn-lg">关联信封</button>
         </div>
       </form>
